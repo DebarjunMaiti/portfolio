@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Developer Portfolio of Debarjun Maiti - Full Stack Web Developer. View projects, skills, education timeline, and chat with virtual assistant.">
+    <title>Debarjun Maiti | Interactive Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="main-header glass-card">
+        <div class="logo">
+            <span class="logo-accent">&lt;</span>Debarjun<span class="logo-accent">.M/&gt;</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#hero" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#journey">Journey</a>
+            <a href="#assistant">Chatbot</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <select id="industry-selector" class="nav-dropdown" aria-label="Customize Portfolio Industry">
+                <option value="general">✨ Select Industry View</option>
+                <option value="saas">💻 Full-Stack & SaaS</option>
+                <option value="cloud">☁️ Cloud & DevOps</option>
+                <option value="enterprise">🏢 Enterprise & Backend</option>
+            </select>
+        </div>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" id="mobile-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+        </button>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-menu">
+        <nav class="mobile-nav-links">
+            <a href="#hero" onclick="toggleMobileMenu()">Home</a>
+            <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
+            <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+            <a href="#journey" onclick="toggleMobileMenu()">Journey</a>
+            <a href="#assistant" onclick="toggleMobileMenu()">Chatbot</a>
+            <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Container -->
+    <main class="content-container">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="badge-container">
+                        <span class="pulse-badge"></span>
+                        <span class="badge-text" id="status-badge">Available for Internships & Roles</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Building the <span class="gradient-text">Next Gen</span> of Web Applications
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Hi, I'm <span class="highlight-name">Debarjun Maiti</span>
+                    </h2>
+                    <p class="hero-tagline" id="typewriter-text">
+                        Full Stack Developer | Cloud & Web App Solutions | BCA Graduate
+                    </p>
+                    
+                    <!-- Recruiter Pitch Card -->
+                    <div class="pitch-container glass-card" id="pitch-card">
+                        <h3 class="pitch-title" id="pitch-heading">💡 Dynamic Recruiter Pitch</h3>
+                        <p class="pitch-body" id="pitch-content">
+                            I construct responsive, secure, and user-centric web applications. Specializing in full-stack architectures and cloud solutions, I focus on optimizing performance, database scaling, and adapting rapidly to modern technology stacks.
+                        </p>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#assistant" class="btn btn-primary">
+                            <span>Interactive Assistant</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get Contact Details</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="avatar-glow-ring">
+                        <div class="avatar-inner">
+                            <img src="https://avatars.githubusercontent.com/u/241681192?v=4" alt="Debarjun Maiti avatar" class="avatar-image">
+                        </div>
+                        <div class="floating-tech-badge tech-react" title="React">
+                            <svg width="24" height="24" viewBox="-11.5 -10.23174 23 20.46348"><circle cx="0" cy="0" r="2.05" fill="#61dafb"/><g stroke="#61dafb" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg>
+                        </div>
+                        <div class="floating-tech-badge tech-node" title="NodeJS">
+                            <svg width="24" height="24" viewBox="0 0 256 295" fill="#68a063"><path d="M128 0L24.8 59.6v119.2L128 238l103.2-59.2V59.6L128 0zm68 153.2c-5.2 24.8-21.6 39.2-46.8 40.8-24.8 1.6-43.2-9.6-47.2-34.4-4-24.8 8.8-44.4 34.4-47.2 24.8-2.8 44.4 8.8 47.2 34.4 4.8 5.6 7.6 13.2 8.4 20.8l4 28.8-23.6 8.8c.8-10.4-1.2-20.8-6.4-32z"/></svg>
+                        </div>
+                        <div class="floating-tech-badge tech-python" title="Python">
+                            <svg width="24" height="24" viewBox="0 0 110 110" fill="#3776ab"><path d="M55 2c-29.3 0-27.5 12.7-27.5 12.7v9.8H56v4H18.7C6.1 28.5 6.5 45.8 6.5 45.8h10.9V39c0-6 4.7-10.5 10.9-10.5H55c17.5 0 22-8.5 22-22s-12.7-4.5-22-4.5zM82.2 46.2H54v-4h37.3c12.6 0 12.2 17.3 12.2 17.3h-10.9v6.8c0 6-4.7 10.5-10.9 10.5H54c-17.5 0-22 8.5-22 22s12.7 4.5 22 4.5c29.3 0 27.5-12.7 27.5-12.7v-9.8H54v-4h37.3c12.6 0 12.2-17.3 12.2-17.3v-6.8c0-6.1-4.7-10.5-11.3-10.5z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruiter View Customize Section (Pills) -->
+        <section class="industry-pills-section">
+            <h3 class="section-micro-heading">🚀 RECRUITER MODE</h3>
+            <p class="section-micro-desc">Tailor the portfolio experience to your team's stack:</p>
+            <div class="pills-container" id="pills-nav">
+                <button class="pill-btn active" data-view="general">✨ General View</button>
+                <button class="pill-btn" data-view="saas">💻 Full-Stack (MERN)</button>
+                <button class="pill-btn" data-view="cloud">☁️ Cloud & DevOps</button>
+                <button class="pill-btn" data-view="enterprise">🏢 Enterprise Backend</button>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <h2 class="section-title">Technical <span class="gradient-text">Competencies</span></h2>
+            <div class="skills-grid">
+                <!-- Frontend Card -->
+                <div class="skill-category-card glass-card" data-tilt>
+                    <div class="category-header">
+                        <div class="category-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3>Frontend Core</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-tooltip="Component-driven UI construction & hooks logic">ReactJS</div>
+                        <div class="skill-item" data-tooltip="Typed programming for bulletproof UI component creation">TypeScript</div>
+                        <div class="skill-item" data-tooltip="Utility-first styling, absolute layout control, custom configurations">TailwindCSS</div>
+                        <div class="skill-item" data-tooltip="ES6+ functional structures, event handlers, DOM optimization">JavaScript (ES6)</div>
+                        <div class="skill-item" data-tooltip="Responsive page skeletons and structured documents">HTML5 / CSS3</div>
+                        <div class="skill-item" data-tooltip="Wireframing, modern typography pairings, mockup assembly">Figma Design</div>
+                    </div>
+                </div>
+
+                <!-- Backend Card -->
+                <div class="skill-category-card glass-card" data-tilt>
+                    <div class="category-header">
+                        <div class="category-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        </div>
+                        <h3>Backend & API</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-tooltip="V8 engine operations, event loops, NPM package manager">Node.js</div>
+                        <div class="skill-item" data-tooltip="REST API design, routing structures, validation middlewares">Express.js</div>
+                        <div class="skill-item" data-tooltip="Python MVC architectures, secure server models, ORM">Django</div>
+                        <div class="skill-item" data-tooltip="Lightweight WSGI applications, Python microservice endpoints">Flask</div>
+                        <div class="skill-item" data-tooltip="Enterprise architectures, C# controller API structures">.NET Core</div>
+                        <div class="skill-item" data-tooltip="Python OOP scripting, microservice servers, data processing">Python OOP</div>
+                    </div>
+                </div>
+
+                <!-- Database Card -->
+                <div class="skill-category-card glass-card" data-tilt>
+                    <div class="category-header">
+                        <div class="category-icon" style="background: rgba(236, 72, 153, 0.15); color: #ec4899;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+                        </div>
+                        <h3>Database & Cloud</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-tooltip="Document-oriented JSON collections, aggregation pipes, indexes">MongoDB</div>
+                        <div class="skill-item" data-tooltip="Relational database design, inner joins, stored procedures">MySQL</div>
+                        <div class="skill-item" data-tooltip="Enterprise SQL querying, robust relational models">Microsoft SQL</div>
+                        <div class="skill-item" data-tooltip="Traditional relational models, PL/SQL trigger setups">Oracle DB</div>
+                        <div class="skill-item" data-tooltip="Cloud console structures, EC2, S3 bucket storage, cloud basics">Amazon Web Services</div>
+                    </div>
+                </div>
+
+                <!-- Systems & Tools Card -->
+                <div class="skill-category-card glass-card" data-tilt>
+                    <div class="category-header">
+                        <div class="category-icon" style="background: rgba(234, 179, 8, 0.15); color: #eab308;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                        </div>
+                        <h3>Languages & Tools</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item" data-tooltip="Object-oriented architecture, algorithms implementation">Java Core</div>
+                        <div class="skill-item" data-tooltip="Low-level memory management, core computing algorithms">C Language</div>
+                        <div class="skill-item" data-tooltip="API request testing, payload validation, environment variables">Postman</div>
+                        <div class="skill-item" data-tooltip="Distributed version control, branch management, merge conflict resolution">Git & GitHub</div>
+                        <div class="skill-item" data-tooltip="Command line navigation, scripting, system environment files">Linux CLI</div>
+                        <div class="skill-item" data-tooltip="Hardware programming, microcontrollers, sensor configurations">Arduino IoT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+            <p class="section-subtitle">Real-world applications built from scratch</p>
+            <div class="projects-grid" id="projects-grid">
+                
+                <!-- Project 1 (Text to Speech Flask) -->
+                <div class="project-card glass-card" data-category="aiml">
+                    <div class="project-media">
+                        <div class="project-overlay-glow"></div>
+                        <div class="project-placeholder-visual py-tech">🎙️</div>
+                        <span class="project-badge">Flask + Python</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">text-to-speech-flask</h3>
+                        <p class="project-desc">
+                            🌐 A multilingual Text-to-Speech web app built with Flask and gTTS that converts mixed Hindi-English text into natural-sounding speech. Highly responsive and accessible layout.
+                        </p>
+                        <div class="project-tags">
+                            <span>Flask</span>
+                            <span>gTTS</span>
+                            <span>Python</span>
+                            <span>HTML5</span>
+                            <span>API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/DebarjunMaiti/text-to-speech-flask" target="_blank" class="project-link-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                Codebase
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Personal Portfolio) -->
+                <div class="project-card glass-card" data-category="saas">
+                    <div class="project-media">
+                        <div class="project-overlay-glow"></div>
+                        <div class="project-placeholder-visual js-tech">💻</div>
+                        <span class="project-badge">Frontend SPA</span>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-name">DebarjunMaiti Portfolio</h3>
+                        <p class="project-desc">
+                            Personal portfolio and projects repository showcasing my journey as a Full Stack Web Developer. Responsive layout, interactive animations, custom theme toggles, and clean UI components.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>Vanilla CSS</span>
+                            <span>JavaScript</span>
+                            <span>Canvas</span>
+                            <span>Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/DebarjunMaiti/DebarjunMaiti" target="_blank" class="project-link-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                Codebase
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Educational Journey Timeline Section -->
+        <section id="journey" class="journey-section">
+            <h2 class="section-title">Educational <span class="gradient-text">Milestones</span></h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Current focus Milestone -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card current-step">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3 class="timeline-title">Cloud Engineering & DevOps</h3>
+                        <p class="timeline-institution">Current Specialization & Focus</p>
+                        <p class="timeline-desc">
+                            Developing expertise in cloud systems, AWS service integrations (EC2, S3), deployment pipelines, networking configurations, containerization, and backend infrastructure scalability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BCA Milestone -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2022 - 2025</span>
+                        <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+                        <p class="timeline-institution">Graduate Degree Milestone</p>
+                        <p class="timeline-desc">
+                            Gained foundational knowledge in Computer Architectures, OOP methodologies (Java, C++), Data Structures & Algorithms, and relational database systems (MySQL/Oracle).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Chatbot Assistant Section -->
+        <section id="assistant" class="chatbot-section">
+            <div class="chatbot-grid">
+                <div class="chatbot-intro">
+                    <h2 class="section-title">Recruiter <span class="gradient-text">Assistant</span></h2>
+                    <p class="chatbot-desc">
+                        Save time reading resumes! Click on any pre-set question on the right side or tap options in the chat to instantly discover my strengths, course details, and availability.
+                    </p>
+                    <div class="chat-features">
+                        <div class="chat-feature-item">
+                            <span class="feat-icon">⚡</span>
+                            <span>Instant, structured answers</span>
+                        </div>
+                        <div class="chat-feature-item">
+                            <span class="feat-icon">📅</span>
+                            <span>Details on graduation & cloud roadmap</span>
+                        </div>
+                        <div class="chat-feature-item">
+                            <span class="feat-icon">📍</span>
+                            <span>Relocation and remote work setup info</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chatbot-interface glass-card">
+                    <!-- Chat Window Header -->
+                    <div class="chat-header">
+                        <div class="chat-bot-avatar">DM</div>
+                        <div class="chat-bot-status">
+                            <h4>Debarjun's Assistant</h4>
+                            <span>Active & Online</span>
+                        </div>
+                    </div>
+                    <!-- Chat Messages Area -->
+                    <div class="chat-messages" id="chat-box">
+                        <div class="chat-msg bot-msg">
+                            Hi there! I am Debarjun's virtual portfolio assistant. Feel free to ask me anything from the quick selectors below to review my background instantly.
+                        </div>
+                    </div>
+                    <!-- Predefined Recruiter Questions -->
+                    <div class="chat-input-area">
+                        <div class="chat-quick-replies" id="quick-replies">
+                            <button onclick="askBot(0)">🎓 What is your educational background?</button>
+                            <button onclick="askBot(1)">💪 What are your core technical strengths?</button>
+                            <button onclick="askBot(2)">🌍 Are you open to remote/relocation?</button>
+                            <button onclick="askBot(3)">🎙️ Tell me about your Text-to-Speech app</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section / Interactive Terminal Console -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Establish <span class="gradient-text">Contact</span></h2>
+            <div class="contact-grid">
+                
+                <!-- Recruiter Quick Contact Card -->
+                <div class="quick-contact-card glass-card">
+                    <h3>Recruiter Action Panel</h3>
+                    <p class="panel-subtitle">Click below for instant connection paths:</p>
+                    
+                    <div class="contact-links-list">
+                        <!-- Email -->
+                        <a href="mailto:debarjunmaiti004@gmail.com" class="contact-action-btn email-btn">
+                            <span class="icon-wrap">📧</span>
+                            <div class="action-btn-info">
+                                <strong>debarjunmaiti004@gmail.com</strong>
+                                <span>Send Direct Email Enquiry</span>
+                            </div>
+                        </a>
+                        
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/debarjunmaiti/" target="_blank" class="contact-action-btn linkedin-btn">
+                            <span class="icon-wrap">🔗</span>
+                            <div class="action-btn-info">
+                                <strong>in/debarjunmaiti</strong>
+                                <span>Connect on LinkedIn</span>
+                            </div>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/DebarjunMaiti" target="_blank" class="contact-action-btn github-btn">
+                            <span class="icon-wrap">🐙</span>
+                            <div class="action-btn-info">
+                                <strong>github.com/DebarjunMaiti</strong>
+                                <span>Explore Open Codebases</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal Console -->
+                <div class="terminal-console glass-card">
+                    <div class="terminal-header">
+                        <span class="dot red-dot"></span>
+                        <span class="dot yellow-dot"></span>
+                        <span class="dot green-dot"></span>
+                        <span class="terminal-title">debarjun@portfolio: ~</span>
+                    </div>
+                    <div class="terminal-body" id="terminal-screen">
+                        <div class="terminal-line">Welcome to the interactive portfolio terminal.</div>
+                        <div class="terminal-line">Type <span class="terminal-cmd">help</span> for a list of available console commands.</div>
+                        <div class="terminal-line">&nbsp;</div>
+                    </div>
+                    <div class="terminal-input-row">
+                        <span class="terminal-prompt">$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" aria-label="Terminal Command Input" placeholder="Type a command...">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Debarjun Maiti. Designed for hiring managers & technical recruiters.</p>
+        <p class="footer-subtext">Built using HTML5, Vanilla CSS3 variables, and core JavaScript.</p>
+    </footer>
+
+    <!-- App Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
