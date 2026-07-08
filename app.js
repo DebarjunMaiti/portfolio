@@ -276,7 +276,8 @@ const botAnswers = [
     "🎓 **Education Timeline:** I completed my Bachelor of Computer Applications (BCA) in 2025 with a strong baseline in computer science. Currently, I am specializing in Cloud Engineering & DevOps, focusing on AWS hosting, backend deployment pipelines, and scalable APIs.",
     "💪 **Core Tech Matrix:** My core strengths lie in full-stack architecture. I build optimized, modular web platforms utilizing the MERN stack (MongoDB, Express, React, Node) and Python (Django, Flask). I have deep interest in optimizing complex database structures.",
     "🌍 **Availability Setup:** I am open to remote contracts, hybrid arrangements, and standard on-site roles. Furthermore, I am ready to relocate to main technology hubs for permanent, high-impact career positions.",
-    "🎙️ **Text-to-Speech Flask App:** This is a multilingual project I constructed. It utilizes Flask (Python) and gTTS to take input in blended Hindi-English text and convert it into natural-sounding speech. You can access the codebase from the Projects catalog above!"
+    "🎙️ **Text-to-Speech Flask App:** This is a multilingual project I constructed. It utilizes Flask (Python) and gTTS to take input in blended Hindi-English text and convert it into natural-sounding speech. You can access the codebase from the Projects catalog above!",
+    "🍳 **Grilli Restaurant Management System:** A premium, fully responsive restaurant website with interactive menus, online table reservations, smooth transitions, and a modern aesthetic, deployed via Vercel. You can visit the live application and view the code from the Projects section above!"
 ];
 
 function initChatbot() {
@@ -381,7 +382,7 @@ Available terminal commands:<br>
             output = `Languages: Javascript, Python, TypeScript, Java, C<br>Front: ReactJS, TailwindCSS, Figma Mockups<br>Back: Node.js, Express, Django, Flask, .NET<br>DB & Cloud: MongoDB, MySQL, MS SQL, AWS`;
             break;
         case "projects":
-            output = `1. <span class="terminal-cmd">text-to-speech-flask</span>: Multilingual speech builder (Flask/Python)<br>2. <span class="terminal-cmd">interactive-portfolio</span>: This site codebase`;
+            output = `1. <span class="terminal-cmd">text-to-speech-flask</span>: Multilingual speech builder (Flask/Python)<br>2. <span class="terminal-cmd">grilli-restaurant-system</span>: Premium restaurant website (HTML5/CSS3/JS)<br>3. <span class="terminal-cmd">interactive-portfolio</span>: This site codebase`;
             break;
         case "contact":
             output = `Email: debarjunmaiti004@gmail.com<br>LinkedIn: linkedin.com/in/debarjunmaiti<br>GitHub: github.com/DebarjunMaiti`;
@@ -400,6 +401,10 @@ Available terminal commands:<br>
         case "github":
             output = `<span class="terminal-success">Opening GitHub workspace...</span>`;
             window.open("https://github.com/DebarjunMaiti", "_blank");
+            break;
+        case "grilli-restaurant-system":
+            output = `<span class="terminal-success">Opening Grilli Restaurant Management System...</span>`;
+            window.open("https://grilli-the-restaurant-management-sy.vercel.app", "_blank");
             break;
         default:
             output = `<span class="terminal-error">Command not found: '${cmd}'. Type 'help' to review console triggers.</span>`;

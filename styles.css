@@ -716,6 +716,9 @@ section {
 
 .project-links {
     margin-top: auto;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .project-link-btn {
@@ -739,6 +742,19 @@ section {
     box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
     transform: translateY(-1px);
 }
+
+.project-link-btn.live-btn {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--color-secondary);
+    border-color: rgba(6, 182, 212, 0.2);
+}
+
+.project-link-btn.live-btn:hover {
+    background: var(--color-secondary);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
 
 /* Educational Journey Timeline */
 .timeline-container {
